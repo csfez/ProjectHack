@@ -1,0 +1,41 @@
+﻿<Window x:Class="ProjectHack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectHack"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\USER\Documents\hackaton\ProjectHack\photo_2022-05-12_10-43-54.jpg"/>
+        </Grid.Background>
+
+
+        <Label Content="Welcome" Margin="246,35,0,0" VerticalAlignment="Top" Height="105" Width="340" HorizontalAlignment="Left" FontFamily="Segoe Print" FontSize="72" FontWeight="Bold" Foreground="#FF1A5C81"   />
+
+        <Button x:Name="signInButton" Content="Sign In" HorizontalAlignment="Left" Margin="667,59,0,0" VerticalAlignment="Top" Width="75" Click="signInButton_Click" Foreground="#FF101011" Background="#FFBCE77A" BorderBrush="#FF0B0B0B"/>
+
+        <TextBox x:Name="id" HorizontalAlignment="Left" Height="21" Margin="359,317,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" GotFocus="TextBox_GotFocus" BorderBrush="#FF0D0D0D" />
+
+        <Button x:Name="connectButton" Content="connect" HorizontalAlignment="Left" Margin="667,378,0,0" VerticalAlignment="Top" Width="75" Click="connectButton_Click" Foreground="#FF030303" Background="#FFC1F189" BorderBrush="#FF090909" UseLayoutRounding="True"/>
+
+        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="21" Margin="359,372,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Width="120"
+
+                 GotFocus="TextBox_GotFocus"  Visibility="Hidden" />
+
+        <TextBlock x:Name="ShowPassword" HorizontalAlignment="Left" Margin="484,378,0,0" TextWrapping="Wrap" Text="show" VerticalAlignment="Top" PreviewMouseDown="ShowPassword_PreviewMouseDown" PreviewMouseUp="ShowPassword_PreviewMouseUp" Height="23" Width="34" RenderTransformOrigin="0.867,0.589"/>
+
+        <PasswordBox Name="PasswordHidden" Height="21" PasswordChar="*" HorizontalAlignment="Left"  Margin="359,373,0,0"  Width="120" VerticalAlignment="Top" BorderBrush="#FF070707" />
+
+        <Label Content="Password" HorizontalAlignment="Left" Margin="375,342,0,0" VerticalAlignment="Top" Foreground="#FF5CA667" FontSize="16" FontFamily="Rockwell"/>
+
+        <Label Content="Username" HorizontalAlignment="Left" Margin="371,288,0,0" VerticalAlignment="Top" FontFamily="Rockwell" Foreground="#FF5EA568" FontSize="16"/>
+
+
+
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProjectHack.AddReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectHack"
+        mc:Ignorable="d"
+        Title="AddReport" Height="650" Width="800">
+    <Window.Resources>
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type local:CategoryNameEnum }" x:Key="WeekDataProvider">
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid Height="745" VerticalAlignment="Top">
+
+        <ComboBox x:Name="CbCategory" DisplayMemberPath="" ItemsSource="{Binding ListCatName}" SelectedIndex="0" SelectionChanged="CbCategory_SelectionChanged" HorizontalAlignment="Left" Margin="347,100,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Category" HorizontalAlignment="Left" Margin="127,100,0,0" VerticalAlignment="Top" Width="96"/>
+        <ComboBox x:Name="CbTitle" SelectedIndex="0" HorizontalAlignment="Left" Margin="347,145,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Title" HorizontalAlignment="Left" Margin="127,141,0,0" VerticalAlignment="Top"/>
+        <Label Content="Photo" HorizontalAlignment="Left" Margin="127,195,0,0" VerticalAlignment="Top"/>
+        <Label Content="Comment" HorizontalAlignment="Left" Margin="127,335,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TbComments" HorizontalAlignment="Left" Height="46" Margin="347,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="283"/>
+        <Image HorizontalAlignment="Left" Height="111" Margin="347,195,0,0" VerticalAlignment="Top" Width="120" />
+        <Label Content="Priority" HorizontalAlignment="Left" Margin="127,403,0,0" VerticalAlignment="Top" Width="96"/>
+        <ComboBox x:Name="CbPriority" DisplayMemberPath="" ItemsSource="{Binding ListPriority}" HorizontalAlignment="Left" Margin="347,403,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Add new report" HorizontalAlignment="Left" Margin="229,39,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button Content="Create Report" HorizontalAlignment="Left" Margin="250,476,0,0" VerticalAlignment="Top" Width="104" Height="29" Click="Button_Click"/>
+
+    </Grid>
+</Window>
