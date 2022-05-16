@@ -12,21 +12,23 @@ using GMap.NET.WindowsForms.Markers;
 
 namespace ProjectHack
 {
-    
+
     public class Reports
     {
         public string Category { get; set; }
         public string Title { get; set; }
         public string Remarks { get; set; }
-        public  int Id { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
 
         public bool statusOfReport { get; set; }
 
         public StatusUrgence statUrgence { get; set; }
 
         public PointLatLng Localization { get; set; }
+        public string PhotoPath { get; set; }
 
-        public void AddReport(string category, string title, string remark,StatusUrgence staturgence, PointLatLng loca)
+        public void AddReport(string category, string title, string remark, StatusUrgence staturgence, PointLatLng loca, int userid, string pathphoto)
         {
             Reports report = new Reports();
             report.Category = category;
@@ -36,7 +38,18 @@ namespace ProjectHack
             report.statusOfReport = false;
             report.statUrgence = staturgence;
             report.Localization = loca;
+            report.UserId = userid;
+            report.PhotoPath = pathphoto;
             DataSource.ListReports.Add(report);
+            List<Reports> listRe = new List<Reports>();
+            listRe = DataSource.ListReports;
+
+        }
+        public List<Reports> getAllReportHistory(int idUser)
+        {
+            List<Reports> listRep = new List<Reports>();
+            listRep = DataSource.ListReports.FindAll(p => p.UserId == idUser);
+            return listRep;
 
         }
 
@@ -46,8 +59,8 @@ namespace ProjectHack
             List<StatusUrgence> ListStatUrgence = Enum.GetValues(typeof(StatusUrgence)).Cast<StatusUrgence>().ToList();
             return ListStatUrgence;
         }
-    
 
-        
+
+
     }
 }

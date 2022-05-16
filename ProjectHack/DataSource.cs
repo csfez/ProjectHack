@@ -48,16 +48,62 @@ namespace ProjectHack
                 }
             };
 
-           /* ListReports = new List<Reports>
+            ListReports = new List<Reports>
             {
                 new Reports
                 {
-                 
-                    
-
+                 Category= "Road_Problem",
+                 Title ="Accident",
+                 Remarks =" ",
+                 Id =++DataSource.id,
+                 statusOfReport = false,
+                 statUrgence = StatusUrgence.Urgent,
+                 Localization = new GMap.NET.PointLatLng(31.785990,35.190816),
+                 UserId=342687647,
+                 PhotoPath="",
                 },
+
+                new Reports
+                {
+                 Category= "Urban_Problem",
+                 Title ="Disruptive_object",
+                 Remarks =" ",
+                 Id =++DataSource.id,
+                 statusOfReport = false,
+                 statUrgence = StatusUrgence.Urgent,
+                 Localization = new GMap.NET.PointLatLng(31.785178,35.192477),
+                 UserId=342687647,
+                 PhotoPath="",
+                },
+
+                new Reports
+                {
+                 Category= "Road_Problem",
+                 Title ="Accident",
+                 Remarks =" ",
+                 Id =++DataSource.id,
+                 statusOfReport = false,
+                 statUrgence = StatusUrgence.Urgent,
+                 Localization = new GMap.NET.PointLatLng(31.784511,35.186657),
+                 UserId=888888,
+                 PhotoPath="",
+                },
+
+                new Reports
+                {
+                 Category= "Other",
+                 Title ="Defective_indication",
+                 Remarks =" ",
+                 Id =++DataSource.id,
+                 statusOfReport = false,
+                 statUrgence = StatusUrgence.NotUrgent,
+                 Localization = new GMap.NET.PointLatLng(31.7854023700883,35.189667157021),
+                 UserId=888888,
+                 PhotoPath="",
+                },
+
             };
-           */
+           
         }
     }
 }

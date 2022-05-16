@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace ProjectHack
     /// </summary>
     public partial class MainWindow : Window
     {
-        User Currentuser = new User();
+        public User Currentuser = new User();
         public MainWindow()
         {
             InitializeComponent();
@@ -28,22 +29,25 @@ namespace ProjectHack
         {
             try
             {
-                if(String.IsNullOrEmpty(id.Text))
+                if (String.IsNullOrEmpty(id.Text))
                     throw new Exception("Bad input");
                 if (String.IsNullOrEmpty(PasswordHidden.Password))
                     throw new Exception("Bad input");
                 string user = id.Text;
                 string password1 = PasswordHidden.Password;
-                if (!Currentuser.CheckPassword(user,password1))
+                if (!Currentuser.CheckPassword(user, password1))
                     throw new Exception("Bad input");
+                Currentuser = Currentuser.getUser(id.Text);
                 Form1 form = new Form1();
+                form.CurrentUser1 = Currentuser;
+                form.init();
                 form.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error");
+                Debug.WriteLine(ex.Message);
             }
-           
+
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)

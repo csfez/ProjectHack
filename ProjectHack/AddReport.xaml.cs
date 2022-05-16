@@ -16,6 +16,10 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using System.Device.Location;
 using GMap.NET.WindowsForms.Markers;
+using System.Diagnostics;
+//using System.DirectoryServices;
+using System.Windows.Forms;
+
 
 
 
@@ -28,6 +32,8 @@ namespace ProjectHack
     {
         Category cat = new Category();
         Reports rep = new Reports();
+        public User user1 = new User();
+
         public PointLatLng Point = new PointLatLng();
         public AddReport()
         {
@@ -47,7 +53,7 @@ namespace ProjectHack
             List<string> ListSubCatName = cat.getAllSubCat((CategoryNameEnum)CbCategory.SelectedItem);
             CbTitle.ItemsSource = ListSubCatName;
 
-           
+
             //CbFirstStation.ItemsSource = bl6.GetStationWithArea((BO.Areas)CbArea.SelectedItem);
         }
 
@@ -60,11 +66,47 @@ namespace ProjectHack
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fill in the comments please");
+                System.Windows.MessageBox.Show("Fill in the comments please");
             }
+            try
+            {
+                if (String.IsNullOrEmpty(CbPriority.Text))
+                    throw new Exception("Bad input");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("Error");
+            }
+            string photoPath = "";
 
-            rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(),TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, Point);
+            rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(), TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, Point, user1.Id, photoPath);
+            //List<Reports> L = new List<Reports>();
+            //L= rep.getAllReportHistory(user1.Id);
+            //  ReportHistorical win = new ReportHistorical();
+            // win.Refresh();
+            this.Close();
+            
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Process.Start(@"C:\Users\nelly\Documents\album");
+           
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = @"C:\Users\nelly\Pictures\album";
+            var result = openFileDialog.ShowDialog();
+            string path = "";
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                path = openFileDialog.FileName;
+            }
+            Img.Source = (new ImageSourceConverter()).ConvertFromString(path) as ImageSource;
+        }
+
     }
 
 

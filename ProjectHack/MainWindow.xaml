@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\USER\Documents\hackaton\ProjectHack\photo_2022-05-12_10-43-54.jpg"/>
+            <ImageBrush ImageSource="C:\Users\nelly\Downloads\imgclear.jpg"/>
         </Grid.Background>
 
 

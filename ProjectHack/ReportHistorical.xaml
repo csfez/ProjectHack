@@ -8,20 +8,25 @@
         Title="ReportHistorical" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\USER\Documents\hackaton\ProjectHack\photo_2022-05-12_10-43-54.jpg"/>
+            <ImageBrush ImageSource="C:\Users\nelly\Downloads\imgclear.jpg"/>
         </Grid.Background>
 
         <Label Content="List of reports" HorizontalAlignment="Left" Height="25" Margin="27,36,0,0" VerticalAlignment="Top" Width="191"/>
-        <Button Content="Return" HorizontalAlignment="Left" Margin="626,358,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Return" Visibility="Visible" HorizontalAlignment="Left" Margin="626,341,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="36"/>
 
-        <ListView Background="AliceBlue"  Name="ListReports" HorizontalAlignment="Left" Margin="27,75,0,0" Width="609" Grid.Row="0" RenderTransformOrigin="0.5,0.5"  FontSize="16" FontStyle="Italic" FontWeight="Bold" Height="261" VerticalAlignment="Top"  >
+        <ListView Background="AliceBlue"  Name="ListViewReports" HorizontalAlignment="Left" Margin="27,75,0,0" Width="609" Grid.Row="0" RenderTransformOrigin="0.5,0.5"  FontSize="16" FontStyle="Italic" FontWeight="Bold" Height="261" VerticalAlignment="Top"  >
 
+            <ListView.ItemBindingGroup>
+
+                <BindingGroup/>
+
+            </ListView.ItemBindingGroup>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Category}" Width="200"/>
                     <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="200"/>
-                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Status}" Width="100"/>
-                    <GridViewColumn Header="State" DisplayMemberBinding="{Binding State}" Width="100"/>
+                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding statUrgence}" Width="100"/>
+                    <GridViewColumn Header="State" DisplayMemberBinding="{Binding statusOfReport}" Width="100"/>
 
                 </GridView>
 

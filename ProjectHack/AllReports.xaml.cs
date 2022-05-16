@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,23 @@ namespace ProjectHack
     /// </summary>
     public partial class AllReports : Window
     {
+
+        public static ObservableCollection<Reports> myCollection { get; set; }
         public AllReports()
         {
             InitializeComponent();
+            myCollection = new ObservableCollection<Reports>(DataSource.ListReports);
+            ListViewAllReports.ItemsSource = myCollection ;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Reports myReport;
+            myReport = ListViewAllReports.SelectedItem as Reports;
+            myCollection.Remove(myReport);
+            DataSource.ListReports.Remove(myReport);
+        }
+
+
     }
 }
