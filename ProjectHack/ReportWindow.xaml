@@ -8,7 +8,7 @@
         Title="ReportWindow" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\nelly\Downloads\imgclear.jpg"/>
+            <ImageBrush ImageSource="images\main_win_pic.jpeg"/>
         </Grid.Background>
 
         <TextBlock x:Name="CategoryBox" HorizontalAlignment="Left" Margin="127,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="44" Width="116"/>

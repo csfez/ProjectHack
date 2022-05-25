@@ -8,7 +8,7 @@
         Title="ReportHistorical" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\nelly\Downloads\imgclear.jpg"/>
+            <ImageBrush ImageSource="images\main_win_pic.jpeg"/>
         </Grid.Background>
 
         <Label Content="List of reports" HorizontalAlignment="Left" Height="25" Margin="27,36,0,0" VerticalAlignment="Top" Width="191"/>

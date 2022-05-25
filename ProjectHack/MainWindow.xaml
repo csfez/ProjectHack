@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\nelly\Downloads\imgclear.jpg"/>
+            <ImageBrush ImageSource="images\main_win_pic.jpeg"/>
         </Grid.Background>
 
 
