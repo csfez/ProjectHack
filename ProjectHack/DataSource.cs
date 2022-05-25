@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMap.NET.WindowsForms.Markers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,7 +62,8 @@ namespace ProjectHack
                  Localization = new GMap.NET.PointLatLng(31.785990,35.190816),
                  UserId=342687647,
                  PhotoPath="",
-                },
+                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.785990,35.190816), GMarkerGoogleType.red)
+        },
 
                 new Reports
                 {
@@ -74,6 +76,7 @@ namespace ProjectHack
                  Localization = new GMap.NET.PointLatLng(31.785178,35.192477),
                  UserId=342687647,
                  PhotoPath="",
+                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.785178,35.192477), GMarkerGoogleType.red)
                 },
 
                 new Reports
@@ -87,6 +90,7 @@ namespace ProjectHack
                  Localization = new GMap.NET.PointLatLng(31.784511,35.186657),
                  UserId=888888,
                  PhotoPath="",
+                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.784511,35.186657), GMarkerGoogleType.red)
                 },
 
                 new Reports
@@ -100,6 +104,7 @@ namespace ProjectHack
                  Localization = new GMap.NET.PointLatLng(31.7854023700883,35.189667157021),
                  UserId=888888,
                  PhotoPath="",
+                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.7854023700883,35.189667157021), GMarkerGoogleType.red)
                 },
 
             };

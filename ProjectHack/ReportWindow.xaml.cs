@@ -25,28 +25,15 @@ namespace ProjectHack
     /// </summary>
     public partial class ReportWindow : Window
     {
-        public ReportWindow(PointLatLng point)
+        public ReportWindow(Reports report)
         {
             InitializeComponent();
+            Report_Id.Text = report.Id.ToString();
+            TitleBox.Text = report.Title.ToString();
+            CategoryBox.Text = report.Category.ToString();
+            RemarksBox.Text = report.Remarks.ToString();
+            Report_Img.Source = (new ImageSourceConverter()).ConvertFromString(report.PhotoPath) as ImageSource;
 
-            Reports report = new Reports();
-
-            for(int i=0; i< DataSource.ListReports.Count; i++)
-            {
-                if (DataSource.ListReports[i].Localization == point)
-                {
-                    report = DataSource.ListReports[i];
-                    TitleBox.Text = report.Title.ToString();
-                    CategoryBox.Text = report.Category.ToString();
-                    RemarksBox.Text = report.Remarks.ToString();
-                }
-                else
-                {
-                    this.Close();
-                }
-            }
-
-            
         }
     }
 }

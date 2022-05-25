@@ -26,6 +26,8 @@ namespace ProjectHack
         public StatusUrgence statUrgence { get; set; }
 
         public PointLatLng Localization { get; set; }
+
+        public GMapMarker marker { get; set; }
         public string PhotoPath { get; set; }
 
         public void AddReport(string category, string title, string remark, StatusUrgence staturgence, PointLatLng loca, int userid, string pathphoto)
@@ -38,6 +40,7 @@ namespace ProjectHack
             report.statusOfReport = false;
             report.statUrgence = staturgence;
             report.Localization = loca;
+            report.marker = new GMarkerGoogle(loca, GMarkerGoogleType.red);
             report.UserId = userid;
             report.PhotoPath = pathphoto;
             DataSource.ListReports.Add(report);

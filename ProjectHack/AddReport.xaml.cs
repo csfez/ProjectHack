@@ -39,6 +39,8 @@ namespace ProjectHack
         bool hasBeenClicked_latitude = false;
         bool hasBeenClicked_longitude = false;
 
+        String photoPath = "";
+
         public AddReport()
         {
             InitializeComponent();
@@ -65,13 +67,15 @@ namespace ProjectHack
         private void Add_Photo_Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = @"C:\Users\nelly\Pictures\album";
+            //\nelly\Pictures\album
+            openFileDialog.InitialDirectory = @"C:\Users";
             var result = openFileDialog.ShowDialog();
             string path = "";
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 path = openFileDialog.FileName;
             }
+            photoPath = path;
             Img.Source = (new ImageSourceConverter()).ConvertFromString(path) as ImageSource;
         }
 
@@ -95,12 +99,14 @@ namespace ProjectHack
             {
                 System.Windows.MessageBox.Show("Error");
             }
-            string photoPath = "";
+            
 
             Point.Lat = double.Parse(Latitude_TextBox.Text);
             Point.Lng = double.Parse(Longitude_TextBox.Text);
 
             rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(), TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, Point, user1.Id, photoPath);
+            Form1 form = new Form1();
+            form.Show();
             //List<Reports> L = new List<Reports>();
             //L= rep.getAllReportHistory(user1.Id);
             //  ReportHistorical win = new ReportHistorical();

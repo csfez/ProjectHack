@@ -11,11 +11,12 @@
             <ImageBrush ImageSource="images\main_win_pic.jpeg"/>
         </Grid.Background>
 
-        <TextBlock x:Name="CategoryBox" HorizontalAlignment="Left" Margin="127,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="44" Width="116"/>
-        <TextBlock x:Name="TitleBox" HorizontalAlignment="Left" Margin="127,37,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="43" Width="86"/>
-        <TextBlock x:Name="RemarksBox" HorizontalAlignment="Left" Margin="118,192,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="54" Width="95"/>
-        <TextBlock HorizontalAlignment="Left" Margin="283,221,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="62" Width="116"/>
-        <TextBlock HorizontalAlignment="Left" Margin="270,305,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="52" Width="129"/>
+        <TextBlock x:Name="CategoryBox" HorizontalAlignment="Left" Margin="118,158,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="44" Width="116"/>
+        <TextBlock x:Name="TitleBox" HorizontalAlignment="Left" Margin="118,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="42" Width="86" RenderTransformOrigin="0.442,1.291"/>
+        <TextBlock x:Name="RemarksBox" HorizontalAlignment="Left" Margin="118,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="95"/>
+        <Label Content="Report number:" HorizontalAlignment="Left" Margin="118,41,0,0" VerticalAlignment="Top" FontFamily="Cooper Black"/>
+        <TextBlock x:Name="Report_Id" HorizontalAlignment="Left" Margin="231,41,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="55"/>
+        <Image x:Name="Report_Img" HorizontalAlignment="Left" Height="159" Margin="520,41,0,0" VerticalAlignment="Top" Width="177"/>
 
     </Grid>
 </Window>

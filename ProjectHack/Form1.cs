@@ -27,7 +27,7 @@ namespace ProjectHack
             watcher.Start();
            
 
-            //map.OnMarkerClick += new MarkerClick(map_OnMarkerClick);
+            map.OnMarkerClick += new MarkerClick(map_OnMarkerClick);
 
         }
 
@@ -56,21 +56,15 @@ namespace ProjectHack
                 map.Zoom = 10;
                 GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
 
-                GMapOverlay markers = new GMapOverlay("markers");
+
+                Load_the_Markers();
 
             
-            GMapMarker marker5;
-
-            for (int i = 0; i < DataSource.ListReports.Count; i++)
-            {
-                marker5 = new GMarkerGoogle(DataSource.ListReports[i].Localization, GMarkerGoogleType.red);
-                markers.Markers.Add(marker5);
-            }
             //if (map.Overlays.Count > 0)
             //{
             //    map.Overlays.RemoveAt(0);
             //}
-            map.Overlays.Add(markers);
+            
 
             }
             catch (Exception ex)
@@ -80,11 +74,30 @@ namespace ProjectHack
         }
         private void map_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
-            PointLatLng point = item.Position;
-            ReportWindow win = new ReportWindow(point);
- 
-            win.Show();
+            for(int i= 0; i< DataSource.ListReports.Count;i++)
+            {
+                if (item == DataSource.ListReports[i].marker)
+                {
+                    ReportWindow win = new ReportWindow(DataSource.ListReports[i]);
+                    win.Show();
+
+                }
+            }
             
+            
+        }
+
+        public void Load_the_Markers()
+        {
+            GMapOverlay markers = new GMapOverlay("markers");
+            GMapMarker marker;
+
+            for (int i = 0; i < DataSource.ListReports.Count; i++)
+            {
+                //marker = new GMarkerGoogle(DataSource.ListReports[i].Localization, GMarkerGoogleType.red);
+                markers.Markers.Add(DataSource.ListReports[i].marker);
+            }
+            map.Overlays.Add(markers);
         }
         
     
@@ -94,7 +107,7 @@ namespace ProjectHack
             win.user1 = CurrentUser1;
             win.Init();
             win.Show();
-            //this.Close();
+            Close();
         }
 
         private void Reporting_History_Button_Click(object sender, EventArgs e)
