@@ -47,13 +47,13 @@ namespace ProjectHack
                 map.ShowCenter = false;
                 var location = watcher.Position.Location;
                 //PointLatLng point = new PointLatLng(location.Latitude, location.Longitude); -> problem with this row
-                PointLatLng point = new PointLatLng(35.0000, 103.000); // -> example of localization
+                PointLatLng point = new PointLatLng(31.261367430479297, 34.79913372551455); // -> example of localization
                 AddReport addrep = new AddReport();
                 addrep.Point = point;
                 map.Position = point;
                 map.MinZoom = 0;
                 map.MaxZoom = 18;
-                map.Zoom = 2;
+                map.Zoom = 10;
                 GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
 
                 GMapOverlay markers = new GMapOverlay("markers");
@@ -111,6 +111,8 @@ namespace ProjectHack
             AllReports win = new AllReports();
             win.Show();
         }
+
+       
 
 
 

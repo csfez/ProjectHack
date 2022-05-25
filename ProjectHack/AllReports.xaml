@@ -35,7 +35,7 @@
 
                             <DataTemplate>
 
-                                <Button Content="Delete" Margin="0" VerticalAlignment="Center"  Width="90" Click="Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
+                                <Button Content="Delete" Margin="0" VerticalAlignment="Center"  Width="90" Click="Delete_Report_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
 
                                     <Button.Resources>
 

@@ -29,14 +29,13 @@ namespace ProjectHack
             ListViewAllReports.ItemsSource = myCollection ;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Delete_Report_Button_Click(object sender, RoutedEventArgs e)
         {
             Reports myReport;
             myReport = ListViewAllReports.SelectedItem as Reports;
             myCollection.Remove(myReport);
             DataSource.ListReports.Remove(myReport);
         }
-
-
     }
 }

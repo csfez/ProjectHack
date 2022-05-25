@@ -35,6 +35,10 @@ namespace ProjectHack
         public User user1 = new User();
 
         public PointLatLng Point = new PointLatLng();
+
+        bool hasBeenClicked_latitude = false;
+        bool hasBeenClicked_longitude = false;
+
         public AddReport()
         {
             InitializeComponent();
@@ -93,6 +97,9 @@ namespace ProjectHack
             }
             string photoPath = "";
 
+            Point.Lat = double.Parse(Latitude_TextBox.Text);
+            Point.Lng = double.Parse(Longitude_TextBox.Text);
+
             rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(), TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, Point, user1.Id, photoPath);
             //List<Reports> L = new List<Reports>();
             //L= rep.getAllReportHistory(user1.Id);
@@ -100,6 +107,33 @@ namespace ProjectHack
             // win.Refresh();
             this.Close();
         }
+
+        private void Latitude_TextBox_Focus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked_latitude)
+            {
+                if (!hasBeenClicked_latitude)
+                {
+                    System.Windows.Controls.TextBox box = sender as System.Windows.Controls.TextBox;
+                    box.Text = String.Empty;
+                    hasBeenClicked_latitude = true;
+                }
+            }
+        }
+
+        private void Longitude_TextBox_Focus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked_longitude)
+            {
+                if (!hasBeenClicked_longitude)
+                {
+                    System.Windows.Controls.TextBox box = sender as System.Windows.Controls.TextBox;
+                    box.Text = String.Empty;
+                    hasBeenClicked_longitude = true;
+                }
+            }
+        }
+
     }
 
 
