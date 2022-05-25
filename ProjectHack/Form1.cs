@@ -34,9 +34,9 @@ namespace ProjectHack
         public void init()
         {
             if (CurrentUser1.Admin)
-                button3.Visible = true;
+                City_Hall_Access_Button.Visible = true;
             else
-                button3.Visible = false;
+                City_Hall_Access_Button.Visible = false;
 
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -88,8 +88,7 @@ namespace ProjectHack
         }
         
     
-        //bouton +
-        private void button1_Click_1(object sender, EventArgs e)
+        private void Add_Report_Button_Click(object sender, EventArgs e)
         {
             AddReport win = new AddReport();
             win.user1 = CurrentUser1;
@@ -98,24 +97,22 @@ namespace ProjectHack
             //this.Close();
         }
 
-        //bouton ...
-        private void button2_Click_1(object sender, EventArgs e)
+        private void Reporting_History_Button_Click(object sender, EventArgs e)
         {
             ReportHistorical win = new ReportHistorical();
             win.user1 = CurrentUser1;
             win.init();
             win.Show();
             this.Close();
-            
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void City_Hall_Access_Button_Click(object sender, EventArgs e)
         {
             AllReports win = new AllReports();
             win.Show();
         }
 
-       
+
 
         //private void Form1_Activated(object sender, EventArgs e)
         //{

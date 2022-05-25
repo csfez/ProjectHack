@@ -57,7 +57,21 @@ namespace ProjectHack
             //CbFirstStation.ItemsSource = bl6.GetStationWithArea((BO.Areas)CbArea.SelectedItem);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Add_Photo_Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = @"C:\Users\nelly\Pictures\album";
+            var result = openFileDialog.ShowDialog();
+            string path = "";
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                path = openFileDialog.FileName;
+            }
+            Img.Source = (new ImageSourceConverter()).ConvertFromString(path) as ImageSource;
+        }
+
+        private void Create_Report_Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -85,28 +99,7 @@ namespace ProjectHack
             //  ReportHistorical win = new ReportHistorical();
             // win.Refresh();
             this.Close();
-            
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Process.Start(@"C:\Users\nelly\Documents\album");
-           
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = @"C:\Users\nelly\Pictures\album";
-            var result = openFileDialog.ShowDialog();
-            string path = "";
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                path = openFileDialog.FileName;
-            }
-            Img.Source = (new ImageSourceConverter()).ConvertFromString(path) as ImageSource;
-        }
-
     }
 
 

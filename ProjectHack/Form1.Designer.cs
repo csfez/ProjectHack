@@ -32,9 +32,9 @@ namespace ProjectHack
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.map = new GMap.NET.WindowsForms.GMapControl();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Add_Report_Button = new System.Windows.Forms.Button();
+            this.Reporting_History_Button = new System.Windows.Forms.Button();
+            this.City_Hall_Access_Button = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@ namespace ProjectHack
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(849, 626);
+            this.splitter1.Size = new System.Drawing.Size(955, 782);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -55,7 +55,7 @@ namespace ProjectHack
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemory = 5;
-            this.map.Location = new System.Drawing.Point(11, 10);
+            this.map.Location = new System.Drawing.Point(12, 12);
             this.map.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 2;
@@ -70,7 +70,7 @@ namespace ProjectHack
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(838, 481);
+            this.map.Size = new System.Drawing.Size(943, 601);
             this.map.TabIndex = 1;
             this.map.Zoom = 0D;
             // 
@@ -78,46 +78,47 @@ namespace ProjectHack
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(857, 39);
+            this.label1.Location = new System.Drawing.Point(964, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 32);
+            this.label1.Size = new System.Drawing.Size(167, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome";
             // 
-            // button1
+            // Add_Report_Button
             // 
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(888, 85);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add Report";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.Add_Report_Button.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_Report_Button.Location = new System.Drawing.Point(999, 106);
+            this.Add_Report_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Add_Report_Button.Name = "Add_Report_Button";
+            this.Add_Report_Button.Size = new System.Drawing.Size(126, 40);
+            this.Add_Report_Button.TabIndex = 4;
+            this.Add_Report_Button.Text = "Add Report";
+            this.Add_Report_Button.UseVisualStyleBackColor = true;
+            this.Add_Report_Button.Click += new System.EventHandler(this.Add_Report_Button_Click);
             // 
-            // button2
+            // Reporting_History_Button
             // 
-            this.button2.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(876, 141);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 34);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Reporting History";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.Reporting_History_Button.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reporting_History_Button.Location = new System.Drawing.Point(986, 176);
+            this.Reporting_History_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Reporting_History_Button.Name = "Reporting_History_Button";
+            this.Reporting_History_Button.Size = new System.Drawing.Size(170, 42);
+            this.Reporting_History_Button.TabIndex = 5;
+            this.Reporting_History_Button.Text = "Reporting History";
+            this.Reporting_History_Button.UseVisualStyleBackColor = true;
+            this.Reporting_History_Button.Click += new System.EventHandler(this.Reporting_History_Button_Click);
             // 
-            // button3
+            // City_Hall_Access_Button
             // 
-            this.button3.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(876, 199);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 29);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "City Hall Access";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.City_Hall_Access_Button.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.City_Hall_Access_Button.Location = new System.Drawing.Point(986, 249);
+            this.City_Hall_Access_Button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.City_Hall_Access_Button.Name = "City_Hall_Access_Button";
+            this.City_Hall_Access_Button.Size = new System.Drawing.Size(170, 36);
+            this.City_Hall_Access_Button.TabIndex = 6;
+            this.City_Hall_Access_Button.Text = "City Hall Access";
+            this.City_Hall_Access_Button.UseVisualStyleBackColor = true;
+            this.City_Hall_Access_Button.Click += new System.EventHandler(this.City_Hall_Access_Button_Click);
             // 
             // openFileDialog1
             // 
@@ -125,12 +126,12 @@ namespace ProjectHack
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 626);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1205, 782);
+            this.Controls.Add(this.City_Hall_Access_Button);
+            this.Controls.Add(this.Reporting_History_Button);
+            this.Controls.Add(this.Add_Report_Button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.map);
             this.Controls.Add(this.splitter1);
@@ -148,9 +149,9 @@ namespace ProjectHack
         private System.Windows.Forms.Splitter splitter1;
         private GMap.NET.WindowsForms.GMapControl map;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Add_Report_Button;
+        private System.Windows.Forms.Button Reporting_History_Button;
+        private System.Windows.Forms.Button City_Hall_Access_Button;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
