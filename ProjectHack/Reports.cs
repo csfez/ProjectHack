@@ -21,7 +21,7 @@ namespace ProjectHack
         public int Id { get; set; }
         public int UserId { get; set; }
 
-        public bool statusOfReport { get; set; }
+        public statusOfReport statReport { get; set; }
 
         public StatusUrgence statUrgence { get; set; }
 
@@ -37,7 +37,7 @@ namespace ProjectHack
             report.Title = title;
             report.Remarks = remark;
             report.Id = ++DataSource.id;
-            report.statusOfReport = false;
+            report.statReport = statusOfReport.Waiting;
             report.statUrgence = staturgence;
             report.Localization = loca;
             report.marker = new GMarkerGoogle(loca, GMarkerGoogleType.red);
@@ -47,6 +47,16 @@ namespace ProjectHack
             List<Reports> listRe = new List<Reports>();
             listRe = DataSource.ListReports;
 
+        }
+
+        public void Take_car_of(int id)
+        {
+            List<Reports> ListRep = new List<Reports>();
+            ListRep = DataSource.ListReports;
+            Reports rep = ListRep.Find(x => x.Id == id);
+            rep.statReport = statusOfReport.handled;
+            ListRep.Remove(ListRep.Find(x => x.Id == id));
+            ListRep.Add(rep);
         }
         public List<Reports> getAllReportHistory(int idUser)
         {

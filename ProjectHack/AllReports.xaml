@@ -30,12 +30,38 @@
                     <GridViewColumn x:Name="ReportStatusUrgence" Header="Urgence:" DisplayMemberBinding="{Binding statUrgence}"  Width="100"/>
 
                     <GridViewColumn Width="150">
-
+                    
                         <GridViewColumn.CellTemplate>
 
                             <DataTemplate>
 
                                 <Button Content="Delete" Margin="0" VerticalAlignment="Center"  Width="90" Click="Delete_Report_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
+
+                                    <Button.Resources>
+
+                                        <Style TargetType="{x:Type Border}">
+
+                                            <Setter Property="CornerRadius" Value="7"/>
+
+                                        </Style>
+
+                                    </Button.Resources>
+
+                                </Button>
+
+                            </DataTemplate>
+
+                        </GridViewColumn.CellTemplate>
+
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="150">
+
+                        <GridViewColumn.CellTemplate>
+
+                            <DataTemplate>
+
+                                <Button Content="Take_car_of" Margin="0" VerticalAlignment="Center"  Width="90" Click="Take_car_of_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
 
                                     <Button.Resources>
 

@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace ProjectHack
 {
     /// <summary>
@@ -37,5 +39,14 @@ namespace ProjectHack
             myCollection.Remove(myReport);
             DataSource.ListReports.Remove(myReport);
         }
+        private void Take_car_of_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Reports myReport= new Reports();
+            myReport = ListViewAllReports.SelectedItem as Reports;
+            myReport.Take_car_of(myReport.Id);
+            Button button = sender as Button;
+            button.Background= Brushes.Green;
+          
+        } 
     }
 }

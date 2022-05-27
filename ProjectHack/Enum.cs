@@ -8,7 +8,7 @@ namespace ProjectHack
 {
     
     public enum StatusUrgence { veryUrgent, Urgent, NotUrgent };
- 
+    public enum statusOfReport { Waiting, handled };
     public enum CategoryNameEnum
     {
         Road_Problem, Urban_Problem, Other

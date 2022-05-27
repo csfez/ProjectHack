@@ -99,11 +99,17 @@ namespace ProjectHack
             {
                 System.Windows.MessageBox.Show("Error");
             }
-            
-
-            Point.Lat = double.Parse(Latitude_TextBox.Text);
-            Point.Lng = double.Parse(Longitude_TextBox.Text);
-
+            //(31,7906287, 34,6355109)
+            try
+            {
+                
+                Point.Lat = double.Parse(Latitude_TextBox.Text);
+                Point.Lng = double.Parse(Longitude_TextBox.Text);
+            }
+            catch(Exception ex)
+            {
+                System.Windows.MessageBox.Show("Error in latitude or longiture field");
+            }
             rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(), TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, Point, user1.Id, photoPath);
             Form1 form = new Form1();
             form.Show();

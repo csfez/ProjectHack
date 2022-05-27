@@ -26,7 +26,7 @@
                     <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Category}" Width="200"/>
                     <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="200"/>
                     <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding statUrgence}" Width="100"/>
-                    <GridViewColumn Header="State" DisplayMemberBinding="{Binding statusOfReport}" Width="100"/>
+                    <GridViewColumn Header="State" DisplayMemberBinding="{Binding statReport}" Width="100"/>
 
                 </GridView>
 
