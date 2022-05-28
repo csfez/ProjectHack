@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMap.NET.WindowsForms;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using GMap.NET.WindowsForms.Markers;
 
 
 namespace ProjectHack
@@ -39,13 +40,15 @@ namespace ProjectHack
             myCollection.Remove(myReport);
             DataSource.ListReports.Remove(myReport);
         }
-        private void Take_car_of_Button_Click(object sender, RoutedEventArgs e)
+        private void Take_care_of_Button_Click(object sender, RoutedEventArgs e)
         {
             Reports myReport= new Reports();
             myReport = ListViewAllReports.SelectedItem as Reports;
-            myReport.Take_car_of(myReport.Id);
+            myReport.Take_care_of(myReport.Id);
             Button button = sender as Button;
             button.Background= Brushes.Green;
+            GMapMarker orangeMarker = new GMarkerGoogle(myReport.Localization, GMarkerGoogleType.orange);
+            myReport.marker = orangeMarker;
           
         } 
     }

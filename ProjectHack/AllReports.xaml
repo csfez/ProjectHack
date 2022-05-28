@@ -23,13 +23,13 @@
 
                     <GridViewColumn x:Name="ReportTitle"  Header="Title:" DisplayMemberBinding="{Binding Title}" Width="150"  />
 
-                    <GridViewColumn x:Name="ReportCategory" Header="Category:" DisplayMemberBinding="{Binding Category}"  Width="200"/>
+                    <GridViewColumn x:Name="ReportCategory" Header="Category:" DisplayMemberBinding="{Binding Category}"  Width="150"/>
 
                     <GridViewColumn x:Name="StatusOfReport" Header="Status:" DisplayMemberBinding="{Binding statusOfReport}"  Width="90"/>
 
                     <GridViewColumn x:Name="ReportStatusUrgence" Header="Urgence:" DisplayMemberBinding="{Binding statUrgence}"  Width="100"/>
 
-                    <GridViewColumn Width="150">
+                    <GridViewColumn Width="110">
                     
                         <GridViewColumn.CellTemplate>
 
@@ -55,13 +55,13 @@
 
                     </GridViewColumn>
 
-                    <GridViewColumn Width="150">
+                    <GridViewColumn Width="110">
 
                         <GridViewColumn.CellTemplate>
 
                             <DataTemplate>
 
-                                <Button Content="Take_car_of" Margin="0" VerticalAlignment="Center"  Width="90" Click="Take_car_of_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
+                                <Button Content="Take_care_of" Margin="0" VerticalAlignment="Center"  Width="90" Click="Take_care_of_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
 
                                     <Button.Resources>
 

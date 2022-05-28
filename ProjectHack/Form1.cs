@@ -45,18 +45,20 @@ namespace ProjectHack
             {
                 map.MapProvider = GMapProviders.GoogleMap;
                 map.ShowCenter = false;
+               
                 var location = watcher.Position.Location;
+                
                 //PointLatLng point = new PointLatLng(location.Latitude, location.Longitude); -> problem with this row
                 PointLatLng point = new PointLatLng(31.261367430479297, 34.79913372551455); // -> example of localization
                 AddReport addrep = new AddReport();
-                addrep.Point = point;
+                //addrep.Point = point;
                 map.Position = point;
                 map.MinZoom = 0;
                 map.MaxZoom = 18;
                 map.Zoom = 10;
                 GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
 
-
+                
                 Load_the_Markers();
 
             

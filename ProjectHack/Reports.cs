@@ -49,7 +49,7 @@ namespace ProjectHack
 
         }
 
-        public void Take_car_of(int id)
+        public void Take_care_of(int id)
         {
             List<Reports> ListRep = new List<Reports>();
             ListRep = DataSource.ListReports;

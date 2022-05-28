@@ -32,7 +32,11 @@ namespace ProjectHack
             TitleBox.Text = report.Title.ToString();
             CategoryBox.Text = report.Category.ToString();
             RemarksBox.Text = report.Remarks.ToString();
-            Report_Img.Source = (new ImageSourceConverter()).ConvertFromString(report.PhotoPath) as ImageSource;
+            if (report.PhotoPath != "")
+            {
+                Report_Img.Source = (new ImageSourceConverter()).ConvertFromString(report.PhotoPath) as ImageSource;
+            }
+            
 
         }
     }
