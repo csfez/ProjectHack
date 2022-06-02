@@ -15,7 +15,7 @@ namespace ProjectHack
 
         public bool Admin { get; set; }
 
-        public void CreateNewUser(int id, string username, string password)
+        public User CreateNewUser(int id, string username, string password)
         {
             User user = new User();
             user.Id = id;
@@ -23,6 +23,7 @@ namespace ProjectHack
             user.Password = password;
             user.Admin = false;
             DataSource.ListUsers.Add(user);
+            return user;
             // List<User> u = new List<User>();
             //u = DataSource.ListUsers;
 

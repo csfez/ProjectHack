@@ -39,6 +39,7 @@ namespace ProjectHack
             myReport = ListViewAllReports.SelectedItem as Reports;
             myCollection.Remove(myReport);
             DataSource.ListReports.Remove(myReport);
+
         }
         private void Take_care_of_Button_Click(object sender, RoutedEventArgs e)
         {

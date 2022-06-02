@@ -12,6 +12,7 @@ using GMap.NET.WindowsForms;
 using System.Device.Location;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET;
+using System.Threading;
 
 //C:\dotNet5781_00_9106_7647\dotNet5781_00_9106_7647
 namespace ProjectHack
@@ -20,6 +21,7 @@ namespace ProjectHack
     {
         private GeoCoordinateWatcher watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.Default);
         public User CurrentUser1 = new User();
+        private PointLatLng myPosition;
 
         public Form1()
         {
@@ -45,57 +47,58 @@ namespace ProjectHack
             {
                 map.MapProvider = GMapProviders.GoogleMap;
                 map.ShowCenter = false;
-                GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
-                watcher.Start();
-                var myPosition = watcher.Position;
-                //watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
-                /*
-                var location = myPosition.Location;
-                PointLatLng point = new PointLatLng(location.Latitude, location.Longitude); //-> problem with this row
 
-                AddReport addrep = new AddReport();
-                //addrep.Point = point;
-                map.Position = point;
-                map.MinZoom = 0;
-                map.MaxZoom = 18;
-                map.Zoom = 10;
-                GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
-                */
-                if (myPosition.Location.IsUnknown !=true)
+                bool abort = false;
+                GeoCoordinateWatcher watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
+                if (watcher.TryStart(false, TimeSpan.FromMilliseconds(3000)))
                 {
-                    var location = myPosition.Location;
-                    PointLatLng point = new PointLatLng(location.Latitude, location.Longitude); //-> problem with this row
-                   
-                    AddReport addrep = new AddReport();
-                    //addrep.Point = point;
-                    map.Position = point;
-                    map.MinZoom = 0;
-                    map.MaxZoom = 18;
-                    map.Zoom = 10;
-                    GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
+                    DateTime start = DateTime.Now;
+                    while (watcher.Status != GeoPositionStatus.Ready && !abort)
+                    {
+                        Thread.Sleep(200);
+                        if (DateTime.Now.Subtract(start).TotalSeconds > 5)
+                            abort = true;
+                    }
+
+                    GeoCoordinate coord = watcher.Position.Location;
+                    if (!coord.IsUnknown)
+                    {
+                        PointLatLng point = new PointLatLng(coord.Latitude, coord.Longitude);
+                        myPosition = point;
+
+                        map.Position = point;
+                        map.MinZoom = 0;
+                        map.MaxZoom = 18;
+                        map.Zoom = 15;
+                        
+                        //add the localization point on the map
+                        GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.blue_pushpin);
+                        GMapOverlay markers = new GMapOverlay("markers");
+                        markers.Markers.Add(marker);
+                        map.Overlays.Add(markers);
+
+                    }
+                    else 
+                    {
+                        PointLatLng point = new PointLatLng(31.261367430479297, 34.79913372551455); // -> example of localization
+                        map.Position = point;
+                        map.MinZoom = 0;
+                        map.MaxZoom = 18;
+                        map.Zoom = 15;
+                        //GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
+                    }
                 }
                 else
                 {
                     PointLatLng point = new PointLatLng(31.261367430479297, 34.79913372551455); // -> example of localization
-                    AddReport addrep = new AddReport();
-                    //addrep.Point = point;
                     map.Position = point;
                     map.MinZoom = 0;
                     map.MaxZoom = 18;
                     map.Zoom = 10;
-                    GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
+                    //GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
                 }
-                
-                watcher.Stop();
 
-                Load_the_Markers();
-
-            
-            //if (map.Overlays.Count > 0)
-            //{
-            //    map.Overlays.RemoveAt(0);
-            //}
-            
+               Load_the_Markers();
 
             }
             catch (Exception ex)
@@ -111,11 +114,8 @@ namespace ProjectHack
                 {
                     ReportWindow win = new ReportWindow(DataSource.ListReports[i]);
                     win.Show();
-
                 }
-            }
-            
-            
+            }    
         }
 
         public void Load_the_Markers()
@@ -134,7 +134,7 @@ namespace ProjectHack
     
         private void Add_Report_Button_Click(object sender, EventArgs e)
         {
-            AddReport win = new AddReport();
+            AddReport win = new AddReport(myPosition);
             win.user1 = CurrentUser1;
             win.Init();
             win.Show();
@@ -152,6 +152,7 @@ namespace ProjectHack
 
         private void City_Hall_Access_Button_Click(object sender, EventArgs e)
         {
+            this.Close();
             AllReports win = new AllReports();
             win.Show();
         }

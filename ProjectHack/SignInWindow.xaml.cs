@@ -104,8 +104,11 @@ namespace ProjectHack
             int id = int.Parse(IdBox.Text);
             string username = UsernameBox.Text;
             string password = PasswordHidden.Password;
-            user.CreateNewUser(id, username, password);
             Form1 form = new Form1();
+
+            form.CurrentUser1 = user.CreateNewUser(id, username, password);
+            
+            form.init();
             form.Show();
             this.Close();
 

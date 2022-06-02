@@ -34,16 +34,17 @@ namespace ProjectHack
         Reports rep = new Reports();
         public User user1 = new User();
 
-        public PointLatLng Point = new PointLatLng();
+        public PointLatLng location;
 
         bool hasBeenClicked_latitude = false;
         bool hasBeenClicked_longitude = false;
 
         String photoPath = "";
 
-        public AddReport()
+        public AddReport(PointLatLng myLocation)
         {
             InitializeComponent();
+            location = myLocation;
         }
 
         public void Init()
@@ -99,19 +100,11 @@ namespace ProjectHack
             {
                 System.Windows.MessageBox.Show("Error");
             }
-            //(31,7906287, 34,6355109)
-            try
-            {
-                
-                Point.Lat = double.Parse(Latitude_TextBox.Text);
-                Point.Lng = double.Parse(Longitude_TextBox.Text);
-            }
-            catch(Exception ex)
-            {
-                System.Windows.MessageBox.Show("Error in latitude or longiture field");
-            }
-            rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(), TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, Point, user1.Id, photoPath);
+          
+            rep.AddReport(CbCategory.SelectedItem.ToString(), CbTitle.SelectedItem.ToString(), TbComments.Text, (StatusUrgence)CbPriority.SelectedItem, location, user1.Id, photoPath);
             Form1 form = new Form1();
+            form.CurrentUser1 = user1;
+            form.init();
             form.Show();
             //List<Reports> L = new List<Reports>();
             //L= rep.getAllReportHistory(user1.Id);

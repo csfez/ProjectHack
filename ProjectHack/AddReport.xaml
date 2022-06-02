@@ -28,11 +28,8 @@
         <Label Content="Priority" FontFamily="Cooper Black" HorizontalAlignment="Left" Margin="127,428,0,0" VerticalAlignment="Top" Width="96"/>
         <ComboBox x:Name="CbPriority" DisplayMemberPath="" ItemsSource="{Binding ListPriority}" HorizontalAlignment="Left" Margin="347,428,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Add new report" HorizontalAlignment="Left" Margin="229,39,0,0" VerticalAlignment="Top" Width="183" FontWeight="Bold" FontFamily="Cooper Black" FontSize="20"/>
-        <Button x:Name="Create_Report_Button" Content="Create Report" Background="#FFC1F189" FontFamily="Cooper Black" HorizontalAlignment="Left" Margin="253,571,0,0" VerticalAlignment="Top" Width="104" Height="29" Click="Create_Report_Button_Click"/>
+        <Button x:Name="Create_Report_Button" Content="Create Report" Background="#FFC1F189" FontFamily="Cooper Black" HorizontalAlignment="Left" Margin="347,528,0,0" VerticalAlignment="Top" Width="104" Height="29" Click="Create_Report_Button_Click"/>
         <Button x:Name="Add_Photo_Button" Content="AddPhoto" Background="#FFC1F189" FontFamily="Cooper Black" HorizontalAlignment="Left" Margin="568,241,0,0" VerticalAlignment="Top" Width="75" Click="Add_Photo_Button_Click"/>
-        <Label Content="Location" FontFamily="Cooper Black" HorizontalAlignment="Left" Margin="127,513,0,0" VerticalAlignment="Top" Width="79"/>
-        <TextBox x:Name="Latitude_TextBox" HorizontalAlignment="Left" Height="23" Margin="253,515,0,0" TextWrapping="Wrap" Text="Latitude" VerticalAlignment="Top" Width="120" GotFocus="Latitude_TextBox_Focus" />
-        <TextBox x:Name="Longitude_TextBox" HorizontalAlignment="Left" Height="23" Margin="419,515,0,0" TextWrapping="Wrap" Text="Longitude" VerticalAlignment="Top" Width="120" GotFocus="Longitude_TextBox_Focus"/>
 
     </Grid>
 </Window>
