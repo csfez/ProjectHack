@@ -26,8 +26,8 @@ namespace ProjectHack
         public Form1()
         {
             InitializeComponent();
-            watcher.Start();
-           
+            //watcher.Start();
+            Load_the_Markers();
 
             map.OnMarkerClick += new MarkerClick(map_OnMarkerClick);
 
@@ -98,7 +98,7 @@ namespace ProjectHack
                     //GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
                 }
 
-               Load_the_Markers();
+               //Load_the_Markers();
 
             }
             catch (Exception ex)
@@ -147,7 +147,6 @@ namespace ProjectHack
             win.user1 = CurrentUser1;
             win.init();
             win.Show();
-            this.Close();
         }
 
         private void City_Hall_Access_Button_Click(object sender, EventArgs e)
@@ -158,9 +157,6 @@ namespace ProjectHack
         }
 
        
-
-
-
         //private void Form1_Activated(object sender, EventArgs e)
         //{
         //    map.MapProvider = GMapProviders.GoogleMap;

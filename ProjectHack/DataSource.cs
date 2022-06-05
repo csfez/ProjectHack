@@ -90,7 +90,7 @@ namespace ProjectHack
                  Localization = new GMap.NET.PointLatLng(31.784511,35.186657),
                  UserId=888888,
                  PhotoPath="",
-                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.784511,35.186657), GMarkerGoogleType.red)
+                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.754403,35.212938), GMarkerGoogleType.red)
                 },
 
                 new Reports
@@ -104,7 +104,7 @@ namespace ProjectHack
                  Localization = new GMap.NET.PointLatLng(31.7854023700883,35.189667157021),
                  UserId=888888,
                  PhotoPath="",
-                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.7854023700883,35.189667157021), GMarkerGoogleType.red)
+                 marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.771137,35.212595), GMarkerGoogleType.red)
                 },
 
             };

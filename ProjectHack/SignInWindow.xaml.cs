@@ -67,7 +67,7 @@ namespace ProjectHack
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_CreateUser(object sender, RoutedEventArgs e)
         {
             try
             {
