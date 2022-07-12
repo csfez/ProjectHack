@@ -34,7 +34,7 @@ namespace ProjectHack
                 new User
                 {
                     Id=12345678,
-                    UserName = "TownHall",
+                    UserName = "CityHall",
                     Password = "1234",
                     Admin = true,
 
@@ -75,7 +75,7 @@ namespace ProjectHack
                  statUrgence = StatusUrgence.Urgent,
                  Localization = new GMap.NET.PointLatLng(31.785178,35.192477),
                  UserId=342687647,
-                 PhotoPath="",
+                 PhotoPath="C:\\Users\\zeevm\\OneDrive\\Images\\album\\objet_encombrant.jpg",
                  marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.785178,35.192477), GMarkerGoogleType.red)
                 },
 
@@ -89,7 +89,7 @@ namespace ProjectHack
                  statUrgence = StatusUrgence.Urgent,
                  Localization = new GMap.NET.PointLatLng(31.784511,35.186657),
                  UserId=888888,
-                 PhotoPath="",
+                 PhotoPath="C:\\Users\\zeevm\\OneDrive\\Images\\album\\road_problem_accident.jpg",
                  marker = new GMarkerGoogle(new GMap.NET.PointLatLng(31.754403,35.212938), GMarkerGoogleType.red)
                 },
 

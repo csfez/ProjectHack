@@ -58,6 +58,8 @@ namespace ProjectHack
             ListRep.Remove(ListRep.Find(x => x.Id == id));
             ListRep.Add(rep);
         }
+
+
         public List<Reports> getAllReportHistory(int idUser)
         {
             List<Reports> listRep = new List<Reports>();
@@ -73,7 +75,26 @@ namespace ProjectHack
             return ListStatUrgence;
         }
 
+        public List<Reports> ShowFilteredList(String filter)
+        {
+            List<Reports> ListFiltered = new List<Reports>();
+            if (filter == "Waiting to take car")
+            {
+                ListFiltered = DataSource.ListReports.FindAll(p => p.statReport == statusOfReport.Waiting);
+                return ListFiltered;
+            }
+            if (filter == "Handled")
+            {
+                ListFiltered = DataSource.ListReports.FindAll(p => p.statReport == statusOfReport.handled);
+                return ListFiltered;
+            }
 
+            ListFiltered = DataSource.ListReports;
+            return ListFiltered;
+        }
 
     }
+
+
 }
+

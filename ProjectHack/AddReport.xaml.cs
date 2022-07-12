@@ -113,31 +113,8 @@ namespace ProjectHack
             this.Close();
         }
 
-        private void Latitude_TextBox_Focus(object sender, RoutedEventArgs e)
-        {
-            if (!hasBeenClicked_latitude)
-            {
-                if (!hasBeenClicked_latitude)
-                {
-                    System.Windows.Controls.TextBox box = sender as System.Windows.Controls.TextBox;
-                    box.Text = String.Empty;
-                    hasBeenClicked_latitude = true;
-                }
-            }
-        }
-
-        private void Longitude_TextBox_Focus(object sender, RoutedEventArgs e)
-        {
-            if (!hasBeenClicked_longitude)
-            {
-                if (!hasBeenClicked_longitude)
-                {
-                    System.Windows.Controls.TextBox box = sender as System.Windows.Controls.TextBox;
-                    box.Text = String.Empty;
-                    hasBeenClicked_longitude = true;
-                }
-            }
-        }
+     
+      
 
     }
 

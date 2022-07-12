@@ -186,7 +186,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\objet_encombrant.jpg" />
+    <Resource Include="images\road_problem_accident.jpg" />
+    <Content Include="images\voiture.jfif" />
+    <Content Include="images\voiture2.jfif" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="images\main_win_pic.jpeg" />
   </ItemGroup>

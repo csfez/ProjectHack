@@ -16,7 +16,7 @@
         <TextBlock x:Name="RemarksBox" HorizontalAlignment="Left" Margin="118,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="255"/>
         <Label Content="Report number:" HorizontalAlignment="Left" Margin="118,41,0,0" VerticalAlignment="Top" FontFamily="Cooper Black"/>
         <TextBlock x:Name="Report_Id" HorizontalAlignment="Left" Margin="231,41,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="30" Width="55"/>
-        <Image x:Name="Report_Img" HorizontalAlignment="Left" Height="159" Margin="520,41,0,0" VerticalAlignment="Top" Width="177"/>
+        <Image x:Name="Report_Img" HorizontalAlignment="Left" Height="226" Margin="478,41,0,0" VerticalAlignment="Top" Width="292"/>
 
     </Grid>
 </Window>

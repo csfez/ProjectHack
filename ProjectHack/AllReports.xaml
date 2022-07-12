@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="images\main_win_pic.jpeg"/>
         </Grid.Background>
 
-        <ListView x:Name="ListViewAllReports" HorizontalAlignment="Left" Height="339" Margin="20,10,0,0" VerticalAlignment="Top" Width="721">
+        <ListView x:Name="ListViewAllReports" HorizontalAlignment="Left" Height="272" Margin="20,77,0,0" VerticalAlignment="Top" Width="721" SelectedItem="selected_item">
             <ListView.ItemBindingGroup>
 
                 <BindingGroup/>
@@ -25,17 +25,17 @@
 
                     <GridViewColumn x:Name="ReportCategory" Header="Category:" DisplayMemberBinding="{Binding Category}"  Width="150"/>
 
-                    <GridViewColumn x:Name="StatusOfReport" Header="Status:" DisplayMemberBinding="{Binding statusOfReport}"  Width="90"/>
+                    <GridViewColumn x:Name="StatusOfReport" Header="Status:" DisplayMemberBinding="{Binding statReport}"  Width="90"/>
 
                     <GridViewColumn x:Name="ReportStatusUrgence" Header="Urgence:" DisplayMemberBinding="{Binding statUrgence}"  Width="100"/>
 
                     <GridViewColumn Width="110">
-                    
+
                         <GridViewColumn.CellTemplate>
 
                             <DataTemplate>
 
-                                <Button Content="Delete" Margin="0" VerticalAlignment="Center"  Width="90" Click="Delete_Report_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
+                                <Button x:Name="DeleteButton" Content="Delete" Margin="0" VerticalAlignment="Center"  Width="90" Click="Delete_Report_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
 
                                     <Button.Resources>
 
@@ -55,36 +55,29 @@
 
                     </GridViewColumn>
 
-                    <GridViewColumn Width="110">
+
+
+                    <GridViewColumn   Header="Take care:" Width="110">
 
                         <GridViewColumn.CellTemplate>
 
                             <DataTemplate>
+                                <CheckBox x:Name="checkStat" IsChecked="{Binding reportStat}" Checked="CheckBox1_CheckedChanged"    >
+                                </CheckBox>
 
-                                <Button Content="Take_care_of" Margin="0" VerticalAlignment="Center"  Width="90" Click="Take_care_of_Button_Click" FontWeight="Normal"  FontFamily="Lucida Sans" FontSize="14"  Background="#FFEA8B79" BorderBrush="#FFF4DDCB" >
-
-                                    <Button.Resources>
-
-                                        <Style TargetType="{x:Type Border}">
-
-                                            <Setter Property="CornerRadius" Value="7"/>
-
-                                        </Style>
-
-                                    </Button.Resources>
-
-                                </Button>
 
                             </DataTemplate>
 
                         </GridViewColumn.CellTemplate>
 
                     </GridViewColumn>
+
 
                 </GridView>
 
             </ListView.View>
         </ListView>
+        <ComboBox x:Name="cbFilter"  SelectedIndex="0" HorizontalAlignment="Left" Height="25" Margin="543,27,0,0" VerticalAlignment="Top" Width="198" SelectionChanged="cbFilter_SelectionChanged"/>
 
     </Grid>
 </Window>

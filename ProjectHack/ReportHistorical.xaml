@@ -12,9 +12,9 @@
         </Grid.Background>
 
         <Label Content="List of reports" HorizontalAlignment="Left" Height="25" Margin="27,36,0,0" VerticalAlignment="Top" Width="191"/>
-        <Button Content="Return" Visibility="Visible" HorizontalAlignment="Left" Margin="626,341,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="36"/>
+        
 
-        <ListView Background="AliceBlue"  Name="ListViewReports" HorizontalAlignment="Left" Margin="27,75,0,0" Width="609" Grid.Row="0" RenderTransformOrigin="0.5,0.5"  FontSize="16" FontStyle="Italic" FontWeight="Bold" Height="261" VerticalAlignment="Top"  >
+        <ListView Background="AliceBlue"  Name="ListViewReports" HorizontalAlignment="Left" Margin="27,75,0,0" Width="685" Grid.Row="0" RenderTransformOrigin="0.5,0.5"  FontSize="16" FontStyle="Italic" FontWeight="Bold" Height="261" VerticalAlignment="Top"  >
 
             <ListView.ItemBindingGroup>
 

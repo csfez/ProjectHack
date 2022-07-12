@@ -25,11 +25,24 @@ namespace ProjectHack
     {
 
         public static ObservableCollection<Reports> myCollection { get; set; }
+
         public AllReports()
         {
+
             InitializeComponent();
             myCollection = new ObservableCollection<Reports>(DataSource.ListReports);
-            ListViewAllReports.ItemsSource = myCollection ;
+            ListViewAllReports.ItemsSource = myCollection;
+            ComboBoxItem cb1 = new ComboBoxItem();
+            ComboBoxItem cb2 = new ComboBoxItem();
+            ComboBoxItem cb3 = new ComboBoxItem();
+            cb1.Content = "All";
+            cb2.Content = "Waiting to take car";
+            cb3.Content = "Handled";
+            cbFilter.Items.Add(cb1);
+            cbFilter.Items.Add(cb2);
+            cbFilter.Items.Add(cb3);
+
+
         }
 
 
@@ -40,17 +53,26 @@ namespace ProjectHack
             myCollection.Remove(myReport);
             DataSource.ListReports.Remove(myReport);
 
+
         }
-        private void Take_care_of_Button_Click(object sender, RoutedEventArgs e)
+
+        private void CheckBox1_CheckedChanged(Object sender, EventArgs e)
         {
-            Reports myReport= new Reports();
+
+            Reports myReport = new Reports();
             myReport = ListViewAllReports.SelectedItem as Reports;
+
             myReport.Take_care_of(myReport.Id);
-            Button button = sender as Button;
-            button.Background= Brushes.Green;
             GMapMarker orangeMarker = new GMarkerGoogle(myReport.Localization, GMarkerGoogleType.orange);
             myReport.marker = orangeMarker;
-          
-        } 
+        }
+
+        private void cbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Reports myReport = new Reports();
+            String st = (cbFilter.SelectedItem as ComboBoxItem).Content.ToString();
+            ListViewAllReports.ItemsSource = myReport.ShowFilteredList(st);
+        }
+
     }
 }

@@ -46,13 +46,6 @@ namespace ProjectHack
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Form1 form = new Form1();
-            form.CurrentUser1 = user1;
-            form.init();
-            form.Show();
-            this.Close();
-        }
+       
     }
 }
